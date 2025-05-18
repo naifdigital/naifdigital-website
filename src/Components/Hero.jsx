@@ -2,29 +2,30 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
   // Background media (videos and images)
-  const backgroundMedia = [
+  const backgroundMedia =[
     {
       type: 'video',
-      src: '',
-      title: "Global Digital",
-      subtitle: "Transformation Partners",
-      description: "Empowering businesses with cutting-edge solutions across 25+ countries."
+      src: 'Unveiling Mereb Technology PLC.mp4',
+      title: "Global Digital Excellence",
+      subtitle: "Your Transformation Ally",
+      description: "We partner with visionary enterprises to drive comprehensive digital transformation across 25+ countries. From strategy to execution, we empower businesses with innovative technologies, agile methodologies, and future-proof solutions tailored to global ambitions. Experience excellence that transcends borders."
     },
     {
       type: 'image',
-      src: '',
-      title: "Enterprise Grade",
-      subtitle: "Software Solutions",
-      description: "Scalable platforms designed for global business needs."
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      title: "Enterprise-Grade Innovation",
+      subtitle: "Scalable Software for a Boundless Future",
+      description: "Our platforms are built to scale—seamlessly powering startups to Fortune 500 companies. We craft enterprise-grade software solutions that are robust, secure, and intelligently designed to support complex workflows, cross-border operations, and exponential growth in today’s hyper-connected world."
     },
     {
       type: 'video',
-      src : '',
-      title: "Data-Driven",
-      subtitle: "Marketing Strategies",
-      description: "Proven methodologies that deliver measurable ROI."
+      src: 'Neil Patel - NP Digital.mp4',
+      title: "Intelligent Growth Engines",
+      subtitle: "Precision Marketing Powered by Data",
+      description: "Our marketing strategies are deeply rooted in data science, behavioral analytics, and proven performance models. We don’t just boost traffic—we engineer sustainable growth with campaigns tailored for maximum conversion, long-term brand authority, and measurable return on investment in any industry."
     }
   ];
+  
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -170,19 +171,6 @@ const Hero = () => {
                 <p className="text-lg lg:text-xl max-w-2xl leading-relaxed opacity-90">
                   {media.description}
                 </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Service tags */}
-          <div className="flex flex-wrap gap-3 mb-8 animate-fade-in">
-            {services.slice(0, 3).map((service, index) => (
-              <div
-                key={index}
-                className="px-4 py-2 rounded-full bg-[#00b3cc]/20 border border-[#00b3cc]/50 text-[#00b3cc] font-medium flex items-center transition-all duration-300 hover:bg-[#00b3cc]/30 hover:shadow-[0_0_15px_rgba(0,179,204,0.3)] hover:scale-105"
-              >
-                <span className="mr-2">{service.icon}</span>
-                {service.title}
               </div>
             ))}
           </div>
