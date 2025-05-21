@@ -30,7 +30,7 @@ const VideoShowcase = () => {
     if (videoRefs.current[activeVideo]) {
       videoRefs.current[activeVideo].play();
     }
-    
+
     // Pause other videos
     videoRefs.current.forEach((video, index) => {
       if (video && index !== activeVideo) {
@@ -51,20 +51,20 @@ const VideoShowcase = () => {
             OUR WORK IN MOTION
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C4FF] to-[#005587]">Experience</span> Our Global Impact
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C4FF] to-[#005587]">The Future </span> in the Making
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Interactive showcase of our transformative digital solutions
+            Interactive showcase of our transformative digital Services
           </p>
         </div>
 
         {/* Video showcase container */}
         <div className="relative h-[600px] max-w-5xl mx-auto">
           {videos.map((video, index) => (
-            <div 
+            <div
               key={index}
-              className={`absolute transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] ${index === activeVideo 
-                ? 'w-full h-full z-10 shadow-2xl inset-0' 
+              className={`absolute transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] ${index === activeVideo
+                ? 'w-full h-full z-10 shadow-2xl inset-0'
                 : 'w-[90%] h-[85%] -top-10 -left-10 z-0 shadow-xl'}`}
               onClick={() => handleVideoClick(index)}
             >
@@ -81,7 +81,7 @@ const VideoShowcase = () => {
                   <source src={video.videoUrl} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                
+
                 {/* Overlay content */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-8 flex flex-col justify-end transition-opacity ${index === activeVideo ? 'opacity-100' : 'opacity-0'}`}>
                   <div className="flex justify-between items-end">
@@ -102,12 +102,12 @@ const VideoShowcase = () => {
 
                 {/* Play/pause controls (always visible) */}
                 <div className="absolute bottom-4 left-4 flex space-x-3">
-                  <button 
+                  <button
                     className="p-2 bg-black/50 rounded-full text-white hover:text-[#00C4FF] transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
-                      videoRefs.current[index].paused 
-                        ? videoRefs.current[index].play() 
+                      videoRefs.current[index].paused
+                        ? videoRefs.current[index].play()
                         : videoRefs.current[index].pause();
                     }}
                   >
@@ -121,7 +121,7 @@ const VideoShowcase = () => {
                       </svg>
                     )}
                   </button>
-                  <button 
+                  <button
                     className="p-2 bg-black/50 rounded-full text-white hover:text-[#00C4FF] transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -156,21 +156,6 @@ const VideoShowcase = () => {
               aria-label={`Show video ${index + 1}`}
             />
           ))}
-        </div>
-
-        {/* Global indicators */}
-        <div className="mt-20 pt-12 border-t border-gray-200">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Trusted by Global Enterprises</h3>
-            <div className="flex flex-wrap justify-center gap-8">
-              {['Fortune 500', 'UN Agencies', 'Tech Unicorns', 'Global Banks'].map((client) => (
-                <div key={client} className="flex items-center text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-[#00FFC4] mr-2"></div>
-                  {client}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

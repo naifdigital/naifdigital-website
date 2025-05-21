@@ -93,9 +93,9 @@ const BlogPage = () => {
             <div className="absolute bottom-1/4 right-1/4 w-4 h-4 rounded-full bg-white opacity-10 animate-float-delay-2"></div>
           </div>
   
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 pt-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C4FF] to-[#00FFC4]">Naif</span> Insights
               </h1>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
