@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './utils/ScrollToTop.jsx';
 import Header from './Components/Header.jsx';
 import Hero from './Components/Hero.jsx';
 import Services from './Components/Services.jsx';
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="font-sans">
       <Header /> {/* ✅ Header stays on all pages */}
+      <ScrollToTop />
       <main>
         <Routes>
           <Route
