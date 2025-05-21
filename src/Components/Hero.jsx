@@ -1,31 +1,176 @@
 import { useEffect, useState } from 'react';
 
+export const HireTeamPopup = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm text-black overflow-y-auto">
+      <div
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md md:max-w-2xl mx-auto my-8 overflow-hidden border border-gray-200 animate-popup"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors z-10 cursor-pointer"
+          aria-label="Close popup"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </button>
+
+        {/* Gradient header */}
+        <div className="bg-gradient-to-r from-[#00b3cc] to-[#005587] p-4 md:p-6 text-white">
+          <div className="flex flex-col xs:flex-row items-center space-y-3 xs:space-y-0 xs:space-x-3 md:space-x-4 mb-3 md:mb-4">
+            <img
+              src="/logo-white.png"
+              alt="Naif Digital"
+              className="h-8 md:h-18 w-auto object-contain"
+            />
+            <h2 className="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#aad8e6] text-center xs:text-left">
+              Hire Our Team
+            </h2>
+          </div>
+          <p className="text-sm md:text-base opacity-90">Complete this form and our solutions architect will contact you within 24 hours</p>
+        </div>
+
+        {/* Form */}
+        <div className="p-4 sm:p-6 md:p-8">
+          <form className="space-y-4 md:space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+                  placeholder="John Smith"
+                />
+              </div>
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company*</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+                  placeholder="Acme Inc."
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+                  placeholder="john@company.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone (International Format)</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+                  placeholder="+1 (___) ___-____"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service Needed*</label>
+              <select
+                id="service"
+                name="service"
+                required
+                className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+              >
+                <option value="">Select a service</option>
+                <option>Custom Software Development</option>
+                <option>Digital Transformation</option>
+                <option>AI/ML Solutions</option>
+                <option>Cloud Migration</option>
+                <option>Dedicated Development Team</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details*</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00b3cc] focus:border-[#00b3cc] transition-all"
+                placeholder="Tell us about your project goals, timeline, and budget..."
+              ></textarea>
+            </div>
+
+            <div className="flex items-start">
+              <input
+                id="nda"
+                name="nda"
+                type="checkbox"
+                className="h-4 w-4 text-[#00b3cc] focus:ring-[#00b3cc] border-gray-300 rounded mt-1"
+              />
+              <label htmlFor="nda" className="ml-2 block text-xs sm:text-sm text-gray-600">
+                We require an NDA before discussing project details
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full px-4 py-3 md:px-6 md:py-4 bg-gradient-to-r from-[#00b3cc] to-[#005587] text-white font-medium md:font-bold rounded-lg hover:shadow-lg hover:shadow-[#00b3cc]/30 transition-all transform hover:-translate-y-0.5 md:hover:-translate-y-1 text-sm md:text-base"
+            >
+              Request Team Proposal
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Hero = () => {
   // Background media (videos and images)
-  const backgroundMedia =[
+  const [showHirePopup, setShowHirePopup] = useState(false);
+  const backgroundMedia = [
     {
       type: 'video',
-      src: 'Unveiling Mereb Technology PLC.mp4',
-      title: "Global Digital Excellence",
-      subtitle: "Your Transformation Ally",
-      description: "We partner with visionary enterprises to drive comprehensive digital transformation across 25+ countries. From strategy to execution, we empower businesses with innovative technologies, agile methodologies, and future-proof solutions tailored to global ambitions. Experience excellence that transcends borders."
+      src: 'unveiling naif digital intro.mp4',
+      title: "Software Development",
+      subtitle: "& Digital Growth Partner",
+      description: "We build modern, scalable software for businesses ready to grow. From idea to launch, we bring full-stack solutions that deliver real results."
     },
     {
       type: 'image',
       src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Enterprise-Grade Innovation",
-      subtitle: "Scalable Software for a Boundless Future",
-      description: "Our platforms are built to scale—seamlessly powering startups to Fortune 500 companies. We craft enterprise-grade software solutions that are robust, secure, and intelligently designed to support complex workflows, cross-border operations, and exponential growth in today’s hyper-connected world."
+      title: "Smart Systems",
+      subtitle: "Built for Scale and Security",
+      description: "We create reliable platforms and tools for growing teams. Every system is designed to be fast, secure, and ready for the future."
     },
     {
       type: 'video',
       src: 'Neil Patel - NP Digital.mp4',
-      title: "Intelligent Growth Engines",
-      subtitle: "Precision Marketing Powered by Data",
-      description: "Our marketing strategies are deeply rooted in data science, behavioral analytics, and proven performance models. We don’t just boost traffic—we engineer sustainable growth with campaigns tailored for maximum conversion, long-term brand authority, and measurable return on investment in any industry."
+      title: "Performance Marketing",
+      subtitle: "Growth That Converts",
+      description: "We help brands grow with data-driven campaigns. Our approach focuses on real impact—more traffic, better leads, and lasting reach."
     }
   ];
-  
+
+
+
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -38,7 +183,7 @@ const Hero = () => {
         setCurrentSlide((prev) => (prev + 1) % backgroundMedia.length);
         setIsTransitioning(false);
       }, 1000); // Matches CSS transition duration
-    }, 6000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [backgroundMedia.length]);
@@ -46,17 +191,8 @@ const Hero = () => {
   // Service boxes data
   const services = [
     {
-      title: "Efficient",
-      description: "Optimized processes for maximum productivity",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-      )
-    },
-    {
-      title: "Fast",
-      description: "Rapid deployment with agile methodologies",
+      title: "Lightning-Fast Development",
+      description: "We build your project in record time without compromising quality",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -64,20 +200,29 @@ const Hero = () => {
       )
     },
     {
-      title: "Reliable",
-      description: "99.9% uptime with robust infrastructure",
+      title: "Effortless Scaling",
+      description: "Grow from startup to enterprise seamlessly with our architecture",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
         </svg>
       )
     },
     {
-      title: "Affordable",
-      description: "Competitive pricing with transparent costs",
+      title: "Simple Websites",
+      description: "Beautiful, functional sites that get straight to the point",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      )
+    },
+    {
+      title: "Complex Systems",
+      description: "Custom solutions for intricate business needs",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
       )
     }
@@ -175,20 +320,27 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mb-12 animate-fade-in">
-            <button className="relative overflow-hidden group bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white font-semibold px-7 py-3.5 rounded-full hover:shadow-lg hover:shadow-[#00b3cc]/30 transition-all duration-300 transform hover:-translate-y-1">
-              <span className="relative z-10">Explore Our Solutions</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-            </button>
+            {/* Primary CTA — Goes to all-solutions page */}
+            <a href="/all-solutions">
+              <button className="relative overflow-hidden group bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white font-semibold px-7 py-3.5 rounded-full hover:shadow-lg hover:shadow-[#00b3cc]/30 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                <span className="relative z-10">Discover All Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+              </button>
+            </a>
 
-            <button className="flex items-center space-x-2 bg-transparent border-2 border-white/30 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 group">
-              <span>Schedule Consultation</span>
+            {/* Secondary CTA — Replaces consultation */}
+            <button
+              onClick={() => setShowHirePopup(true)}
+              className="flex items-center space-x-2 bg-transparent border-2 border-white/30 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 group cursor-pointer"
+            >
+              <span>Hire Naif Team</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
           </div>
+
         </div>
 
         {/* Services boxes - moved up with less margin */}
@@ -253,7 +405,22 @@ const Hero = () => {
         .animate-float3 { animation: float3 12s ease-in-out infinite; }
         .animate-fade-in { animation: fade-in 1s ease-out forwards; }
         .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+        @keyframes popup {
+  from { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-popup {
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
       `}</style>
+      <HireTeamPopup isOpen={showHirePopup} onClose={() => setShowHirePopup(false)} />
     </section>
   );
 };
