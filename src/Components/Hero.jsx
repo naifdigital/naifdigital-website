@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const HireTeamPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -272,22 +273,44 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center min-h-screen">
         <div className="pt-24 pb-12 lg:pb-16 w-full lg:w-2/3">
           {/* Trust badge - centered */}
-          <div className="flex justify-center mb-6 animate-fade-in">
-            <div className="flex items-center bg-white/10 px-5 py-2.5 rounded-full backdrop-blur-sm">
-              <div className="flex -space-x-2 mr-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-7 h-7 rounded-full border-2 border-white bg-cover bg-center"
-                    style={{ backgroundImage: `url(https://randomuser.me/api/portraits/${i % 2 === 0 ? 'women' : 'men'}/${i + 20}.jpg)` }}
-                  ></div>
-                ))}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex mb-8 md:mb-12"
+          >
+            <motion.div
+              className="relative group"
+            >
+              {/* Main badge */}
+              <div className="flex items-center bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFC4]/10 px-6 py-3 rounded-full backdrop-blur-xl border border-white/20">
+                {/* Animated verification icon */}
+                <svg
+                  className="w-5 h-5 mr-2 text-[#00FFC4] animate-pulse-slow"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+
+                {/* Text with gradient */}
+                <span className="text-sm md:text-base font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-[#00FFC4]">
+                  Trusted by Local and Global Businesses
+                </span>
+
+                {/* Floating particles */}
               </div>
-              <span className="text-sm font-medium">
-                Trusted by 500+ clients worldwide
-              </span>
-            </div>
-          </div>
+
+              {/* Subtle glow effect on hover */}
+            </motion.div>
+          </motion.div>
+
 
           {/* Animated title - shifted left */}
           <div className="relative h-40 mb-4 overflow-hidden">
@@ -419,6 +442,13 @@ const Hero = () => {
 .animate-popup {
   animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+    @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
       `}</style>
       <HireTeamPopup isOpen={showHirePopup} onClose={() => setShowHirePopup(false)} />
     </section>
