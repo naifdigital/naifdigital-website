@@ -139,7 +139,14 @@ const ContactSection = () => {
                       </div>
                       <div className="ml-4">
                         <h4 className="text-lg font-medium text-gray-900">Location</h4>
-                        <p className="text-gray-600">123 Digital Avenue, Tech District<br />San Francisco, CA 94107</p>
+                        <p>Ethiopia</p>
+                        <ul>
+                          {[
+                           "Adama", "Harar", "Dire Dawa"
+                          ].map((place)=>(
+                          <li className="">{place}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
   
@@ -154,7 +161,7 @@ const ContactSection = () => {
                       <div className="ml-4">
                         <h4 className="text-lg font-medium text-gray-900">Contact</h4>
                         <p className="text-gray-600">
-                          <a href="tel:+11234567890" className="hover:text-[#00b3cc] transition-colors">+1 (123) 456-7890</a><br />
+                          <a href="tel:+11234567890" className="hover:text-[#00b3cc] transition-colors">+251938810259</a><br />
                           <a href="mailto:info@naifdigital.com" className="hover:text-[#00b3cc] transition-colors">info@naifdigital.com</a>
                         </p>
                       </div>
@@ -171,14 +178,14 @@ const ContactSection = () => {
                       <div className="ml-4">
                         <h4 className="text-lg font-medium text-gray-900">Hours</h4>
                         <p className="text-gray-600">
-                          Monday - Friday: 9am - 6pm<br />
-                          Saturday - Sunday: Closed
+                          Monday - Saturday: 24 Hours<br />
+                          Sunday: Closed
                         </p>
                       </div>
                     </div>
                   </div>
   
-                  <div className="mt-8 pt-6 border-t border-gray-200">
+                  {/* <div className="mt-8 pt-6 border-t border-gray-200">
                     <h4 className="text-lg font-medium text-gray-900 mb-4">Global Offices</h4>
                     <div className="flex flex-wrap gap-3">
                       {['London', 'Dubai', 'Singapore', 'Tokyo', 'New York'].map((city) => (
@@ -187,7 +194,7 @@ const ContactSection = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
