@@ -22,6 +22,9 @@ import NotFoundPage from './Pages/NotFoundPage.jsx';
 import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import ServicesPage from './Pages/ServicesPage.jsx';
+import CaseStudiesPage from './Pages/CaseStudiesPage.jsx';
+import BlogPost from './Pages/BlogPost.jsx';
+import AcademyPage from './Pages/AcademyPage.jsx';
 
 function App() {
   return (
@@ -40,7 +43,7 @@ function App() {
                 <Services />
                 <Approach />
                 <Academy />
-                <Testimonials />
+                {/* Testimonials will go here in the future */}
                 <ContactSection />
                 {/* <Leadership /> */}
               </>
@@ -52,6 +55,9 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path='/login' element={<LoginPage /> }/>
           <Route path='/all-solutions' element={<ServicesPage/> }/>
+          <Route path='/case-studies' element={<CaseStudiesPage />  }/>
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/courses" element={<AcademyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
