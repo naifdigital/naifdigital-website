@@ -92,7 +92,7 @@ const Header = () => {
                 onMouseEnter={() => setActiveDropdown('solutions')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#005587] hover:bg-gray-50/50 rounded-lg transition">
+                <button className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#005587] hover:bg-gray-50/50 rounded-lg transition cursor-pointer">
                   Solutions
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -123,7 +123,7 @@ const Header = () => {
                     <div className="border-t border-gray-100 px-4 py-3 bg-gray-50 rounded-b-lg">
                       <Link
                         to="/all-solutions"
-                        className="text-sm font-medium text-[#005587] hover:text-[#003366] flex items-center"
+                        className="text-sm font-medium text-[#005587] hover:text-[#003366] flex items-center cursor-pointer"
                       >
                         View all solutions
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -140,7 +140,7 @@ const Header = () => {
                 onMouseEnter={() => setActiveDropdown('resources')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#005587] hover:bg-gray-50/50 rounded-lg transition">
+                <button className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#005587] hover:bg-gray-50/50 rounded-lg transition cursor-pointer">
                   Resources
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -171,6 +171,12 @@ const Header = () => {
                   </div>
                 )}
               </div>
+              <Link to={"courses"}>
+                  <button className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#005587] hover:bg-gray-50/50 rounded-lg transition cursor-pointer">
+                  Academy
+                </button>
+              </Link>
+
 
               <Link
                 to="/contact"
