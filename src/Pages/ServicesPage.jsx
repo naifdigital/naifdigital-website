@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const ServicesPage = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -28,10 +29,12 @@ const ServicesPage = () => {
     const categories = [
         { id: 'all', name: 'All Solutions' },
         { id: 'digital', name: 'Digital Transformation' },
-        { id: 'cloud', name: 'Cloud Solutions' },
-        { id: 'ai', name: 'AI & Analytics' },
-        { id: 'security', name: 'Cyber Security' },
-        { id: 'iot', name: 'IoT Solutions' },
+        { id: 'software', name: 'Software Development' },
+        { id: 'brand', name: 'Brand & Design' },
+        { id: 'hosting', name: 'Hosting & Optimization' },
+        { id: 'growth', name: 'Growth & Visibility' },
+        { id: 'content', name: 'Content Creation & Media' },
+        { id: 'consulting', name: 'Consulting & Strategy' }
     ];
 
     const services = [
@@ -39,56 +42,128 @@ const ServicesPage = () => {
             id: 1,
             title: 'Enterprise Digital Strategy',
             category: 'digital',
-            description: 'Comprehensive roadmap for digital transformation aligned with business objectives.',
+            description: 'Blueprint for transforming businesses using modern digital approaches.',
             icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-            features: ['Strategy Development', 'Process Automation', 'Change Management'],
+            features: ['Roadmap Planning', 'Process Automation', 'Change Management'],
             stats: { clients: 120, satisfaction: 98 }
         },
         {
             id: 2,
-            title: 'Cloud Migration Services',
-            category: 'cloud',
-            description: 'Seamless transition to cloud infrastructure with minimal downtime.',
-            icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01',
-            features: ['AWS/Azure/GCP Migration', 'Cost Optimization', 'Hybrid Cloud Solutions'],
-            stats: { clients: 85, satisfaction: 97 }
+            title: 'Custom Web & App Development',
+            category: 'software',
+            description: 'Full-stack development of modern web and mobile applications.',
+            icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+            features: ['Frontend & Backend Development', 'Database Architecture', 'API Integration'],
+            stats: { clients: 200, satisfaction: 97 }
         },
         {
             id: 3,
-            title: 'AI-Powered Analytics',
-            category: 'ai',
-            description: 'Leverage machine learning to uncover insights and drive decision making.',
-            icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
-            features: ['Predictive Modeling', 'Natural Language Processing', 'Real-time Analytics'],
-            stats: { clients: 65, satisfaction: 96 }
+            title: 'eCommerce Solutions',
+            category: 'software',
+            description: 'Robust online store setup and optimization tailored to your brand.',
+            icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
+            features: ['Custom Store Design', 'Payment Integration', 'Inventory Management'],
+            stats: { clients: 85, satisfaction: 96 }
         },
         {
             id: 4,
-            title: 'Advanced Threat Protection',
-            category: 'security',
-            description: 'Enterprise-grade security solutions to protect your digital assets.',
-            icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-            features: ['Threat Detection', 'Incident Response', 'Compliance Management'],
-            stats: { clients: 110, satisfaction: 99 }
+            title: 'UI/UX & Visual Identity Design',
+            category: 'brand',
+            description: 'Crafting appealing and functional designs that reflect your brand.',
+            icon: 'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',
+            features: ['Logo Design', 'UI/UX Wireframing', 'Style Guides'],
+            stats: { clients: 70, satisfaction: 99 }
         },
         {
             id: 5,
-            title: 'Smart IoT Infrastructure',
-            category: 'iot',
-            description: 'End-to-end IoT solutions for connected devices and smart systems.',
-            icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-            features: ['Device Management', 'Data Integration', 'Edge Computing'],
-            stats: { clients: 45, satisfaction: 95 }
+            title: 'Performance Hosting & Maintenance',
+            category: 'hosting',
+            description: 'Blazing-fast hosting paired with expert maintenance and security.',
+            icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01',
+            features: ['VPS & Shared Hosting', 'SSL Setup', 'Backup & Recovery'],
+            stats: { clients: 95, satisfaction: 97 }
         },
         {
             id: 6,
-            title: 'Customer Experience Platform',
-            category: 'digital',
-            description: 'Omnichannel solutions to enhance customer engagement and satisfaction.',
-            icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-            features: ['CRM Integration', 'Personalization Engines', 'Journey Analytics'],
-            stats: { clients: 75, satisfaction: 97 }
+            title: 'SEO & Web Optimization',
+            category: 'hosting',
+            description: 'Boost your sites speed, performance, and Google rankings.',
+            icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+            features: ['Core Web Vitals Optimization', 'Technical SEO', 'Speed Enhancement'],
+            stats: { clients: 100, satisfaction: 96 }
         },
+        {
+            id: 7,
+            title: 'Growth Marketing & Campaigns',
+            category: 'growth',
+            description: 'Driving measurable results through tailored growth strategies.',
+            icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+            features: ['PPC Ads', 'Email Marketing', 'Landing Pages'],
+            stats: { clients: 60, satisfaction: 94 }
+        },
+        {
+            id: 8,
+            title: 'Content Creation & Short-Form Media',
+            category: 'content',
+            description: 'High-performing content for social, ads, and branding.',
+            icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+            features: ['Video Ads', 'Reels/Shorts/TikToks', 'Copywriting'],
+            stats: { clients: 75, satisfaction: 98 }
+        },
+        {
+            id: 9,
+            title: 'Digital Consulting & Innovation Strategy',
+            category: 'consulting',
+            description: 'Helping businesses adopt tech and scale smartly.',
+            icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+            features: ['Tech Stack Advisory', 'Innovation Planning', 'Workshops & Audits'],
+            stats: { clients: 50, satisfaction: 95 }
+        },
+        {
+            id: 10,
+            title: 'Business Systems & Automation',
+            category: 'software',
+            description: 'Streamlining operations using custom internal tools and platforms.',
+            icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
+            features: ['ERP/CRM Development', 'Workflow Automation', 'Dashboards'],
+            stats: { clients: 80, satisfaction: 97 }
+        },
+        {
+            id: 11,
+            title: 'Cloud Infrastructure & DevOps',
+            category: 'hosting',
+            description: 'Reliable cloud hosting and CI/CD pipelines for agile delivery.',
+            icon: 'M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z',
+            features: ['AWS/GCP Setup', 'Docker/Kubernetes', 'CI/CD Deployment'],
+            stats: { clients: 65, satisfaction: 96 }
+        },
+        {
+            id: 12,
+            title: 'Rebranding & Brand Refresh',
+            category: 'brand',
+            description: 'Modernizing your brand with strategic and visual alignment.',
+            icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+            features: ['Identity Audit', 'Messaging Frameworks', 'New Visuals'],
+            stats: { clients: 40, satisfaction: 99 }
+        },
+        {
+            id: 13,
+            title: 'Local & International SEO',
+            category: 'growth',
+            description: 'Getting your business found in the right place by the right audience.',
+            icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+            features: ['Google Business Optimization', 'Backlink Building', 'Schema Markup'],
+            stats: { clients: 105, satisfaction: 95 }
+        },
+        {
+            id: 14,
+            title: 'Multilingual Digital Experiences',
+            category: 'software',
+            description: 'Building apps and websites that speak to a global audience.',
+            icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129',
+            features: ['i18n Implementation', 'RTL Support', 'Language Switching Logic'],
+            stats: { clients: 30, satisfaction: 98 }
+        }
     ];
 
     // Filter services based on category and search query
@@ -171,12 +246,8 @@ const ServicesPage = () => {
 
                 {/* Categories */}
                 <section className="px-6 mb-12">
-                    <div
-                        ref={scrollContainerRef}
-                        onWheel={handleWheel}
-                        className="container mx-auto max-w-6xl overflow-x-auto pb-4 scrollbar-hide"
-                    >
-                        <div className="flex space-x-4 w-max md:w-full">
+                    <div className="container mx-auto max-w-6xl">
+                        <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                             {categories.map((category) => (
                                 <motion.button
                                     key={category.id}
@@ -184,8 +255,8 @@ const ServicesPage = () => {
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => setActiveCategory(category.id)}
                                     className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category.id
-                                            ? 'bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white shadow-md'
-                                            : 'bg-white text-[#4a5568] hover:bg-gray-50 shadow-sm'
+                                        ? 'bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white shadow-md'
+                                        : 'bg-white text-[#4a5568] hover:bg-gray-50 shadow-sm'
                                         }`}
                                 >
                                     {category.name}
@@ -247,54 +318,23 @@ const ServicesPage = () => {
                                                     </div>
 
                                                     <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                                                        <div className="flex space-x-4">
-                                                            <div className="text-center">
-                                                                <div className="font-bold text-[#00b3cc]">{service.stats.clients}+</div>
-                                                                <div className="text-xs text-gray-500">Clients</div>
-                                                            </div>
-                                                            <div className="text-center">
-                                                                <div className="font-bold text-[#00b3cc]">{service.stats.satisfaction}%</div>
-                                                                <div className="text-xs text-gray-500">Satisfaction</div>
-                                                            </div>
-                                                        </div>
-                                                        <motion.button
-                                                            whileHover={{ scale: 1.05 }}
-                                                            whileTap={{ scale: 0.95 }}
-                                                            className="bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all"
-                                                        >
-                                                            Learn More
-                                                        </motion.button>
+                                    
+                                                        <Link to={service.title}>
+
+                                                            <motion.button
+                                                                whileHover={{ scale: 1.05 }}
+                                                                whileTap={{ scale: 0.95 }}
+                                                                className="bg-gradient-to-r from-[#00b3cc] to-[#00ccb3] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all cursor-pointer"
+                                                            >
+                                                                Learn More
+                                                            </motion.button>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {/* Hover overlay */}
-                                            <AnimatePresence>
-                                                {hoveredService === service.id && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        exit={{ opacity: 0 }}
-                                                        className="absolute inset-0 bg-gradient-to-br from-[#00b3cc]/90 to-[#00ccb3]/90 flex items-center justify-center"
-                                                    >
-                                                        <motion.div
-                                                            initial={{ scale: 0.8 }}
-                                                            animate={{ scale: 1 }}
-                                                            className="text-white text-center p-6"
-                                                        >
-                                                            <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                                                            <p className="mb-4">{service.description}</p>
-                                                            <motion.button
-                                                                whileHover={{ scale: 1.05 }}
-                                                                whileTap={{ scale: 0.95 }}
-                                                                className="bg-white text-[#00b3cc] px-6 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-all"
-                                                            >
-                                                                Explore Solution
-                                                            </motion.button>
-                                                        </motion.div>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
+
                                         </motion.div>
                                     ))}
                                 </motion.div>
