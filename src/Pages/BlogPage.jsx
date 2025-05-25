@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const BlogPage = () => {
     const featuredPost = {
       title: "The Future of Enterprise Digital Transformation in 2024",
@@ -6,7 +8,7 @@ const BlogPage = () => {
       date: "May 15, 2024",
       readTime: "8 min read",
       category: "Digital Transformation",
-      image: "/blog/featured-post.jpg",
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       avatar: "/authors/dr-chen.jpg"
     };
   
@@ -38,7 +40,8 @@ const BlogPage = () => {
         category: "Design",
         date: "April 22, 2024",
         readTime: "5 min read",
-        image: "/blog/ux-design.jpg"
+        image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+        slug: "cross-cultural-ux-design-for-global-audiences", // Add this
       },
       {
         title: "Blockchain for Enterprise Supply Chains",
@@ -62,7 +65,7 @@ const BlogPage = () => {
         category: "Emerging Tech",
         date: "April 5, 2024",
         readTime: "11 min read",
-        image: "/blog/quantum.jpg"
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       },
       {
         title: "Global Data Privacy Regulations Compared",
@@ -78,7 +81,7 @@ const BlogPage = () => {
         category: "Leadership",
         date: "March 22, 2024",
         readTime: "7 min read",
-        image: "/blog/teams.jpg"
+        image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       }
     ];
   
@@ -233,12 +236,14 @@ const BlogPage = () => {
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-500">{post.date}</span>
+                          <Link to={`/blog/${post.slug}`}>
                           <button className="text-[#005587] hover:text-[#003366] font-medium text-sm flex items-center">
                             Read more
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </button>
+                          </Link>
                         </div>
                       </div>
                     </article>
