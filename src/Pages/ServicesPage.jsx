@@ -352,11 +352,12 @@ const ServicesPage = () => {
                                 </motion.div>
                             )}
                         </AnimatePresence>
+
                     </div>
                 </section>
 
                 {/* CTA section */}
-                <section className="bg-gradient-to-r from-[#001F3F] to-[#003366] text-white py-16 px-6">
+                <section className="text-black py-16 px-6">
                     <div className="container mx-auto max-w-4xl text-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -365,7 +366,7 @@ const ServicesPage = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-                            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                            <p className="text-xl text-gray mb-8 max-w-3xl mx-auto">
                                 Our experts are standing by to help you navigate your digital transformation journey.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -379,7 +380,7 @@ const ServicesPage = () => {
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+                                    className="bg-transparent border-2 border-gray text-black px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
                                 >
                                     Contact Sales
                                 </motion.button>
