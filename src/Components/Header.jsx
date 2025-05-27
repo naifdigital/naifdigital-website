@@ -25,17 +25,20 @@ const Header = () => {
   }, [location]);
 
   const solutionsDropdown = [
-    { title: "Enterprise Software", description: "Custom solutions for large organizations", path: "/solutions/enterprise" },
-    { title: "SaaS Development", description: "Cloud-based software products", path: "/solutions/saas" },
-    { title: "Digital Transformation", description: "Modernize your business operations", path: "/solutions/digital-transformation" },
-    { title: "AI & Machine Learning", description: "Intelligent automation solutions", path: "/solutions/ai-ml" },
+    { title: "Web & App Development", description: "Custom web and app solutions ", path: "/solutions/web-&-app-development" },
+    { title: "Brand & Design", description: "Designing Businness Brand", path: "/solutions/saas" },
+    { title: "Hosting & Optimization", description: "Modernize your business operations", path: "/solutions/digital-transformation" },
+    { title: "Growth & Visibility", description: "SEO Friendly Sites and Good Strategy", path: "/solutions/ai-ml" },
+    { title: "Content Creation & Media", description: "", path: "/solutions/ai-ml" },
+
   ];
 
   const resourcesDropdown = [
-    { title: "Case Studies", description: "See our work in action", path: "/case-studies" },
-    { title: "Blog & Insights", description: "Latest industry trends", path: "/blog" },
-    { title: "White Papers", description: "In-depth technical guides", path: "/resources/whitepapers" },
-    { title: "Webinars", description: "Live expert sessions", path: "/resources/webinars" },
+    { title: "Projects", description: "See our work in action", path: "/projects" },
+    { title: "Growth Playbooks", description: "Latest industry trends", path: "/growth-playbooks" },
+    { title: "Tutorials & Courses", description: "In-depth technical guides", path: "/courses" },
+    { title: "Free Tools & Templates", description: "In-depth technical guides", path: "/resources/whitepapers" },
+    { title: "Blog", description: "Live expert sessions", path: "/blog" },
   ];
 
   return (
