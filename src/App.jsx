@@ -55,7 +55,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path='/login' element={<LoginPage /> }/>
           <Route path='/all-solutions' element={<ServicesPage/> }/>
-          <Route path='/case-studies' element={<CaseStudiesPage />  }/>
+          <Route path='/projects' element={<CaseStudiesPage />  }/>
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/courses" element={<AcademyPage />} />
           <Route path="*" element={<NotFoundPage />} />
