@@ -52,37 +52,23 @@ const ContactPage = () => {
 
     const globalOffices = [
         {
-            city: "San Francisco",
-            address: "200 Tech Circle, Suite 150\nSan Francisco, CA 94107",
-            phone: "+1 (415) 555-7890",
-            email: "sf@naifdigital.com",
-            coordinates: "37.7749° N, 122.4194° W",
-            image: "/offices/sf.jpg"
+            city: "Harar City",
+            phone: "+251 938 810 259",
+            email: "mail@naifdigital.com",
+            image: "harar.jpeg"
         },
         {
-            city: "London",
-            address: "20 Churchill Place\nCanary Wharf, London E14 5EU",
-            phone: "+44 20 7946 0958",
-            email: "london@naifdigital.com",
-            coordinates: "51.5074° N, 0.1278° W",
-            image: "/offices/london.jpg"
+            city: "Adama City",
+            phone: "+251 968 144 761",
+            email: "mail@naifdigital.com",
+            image: "adama.jpg"
         },
         {
-            city: "Singapore",
-            address: "1 Raffles Place\n#50-01 One Raffles Place, Singapore 048616",
-            phone: "+65 6818 9288",
-            email: "singapore@naifdigital.com",
-            coordinates: "1.2843° N, 103.8513° E",
-            image: "/offices/singapore.jpg"
+            city: "Dire Dawa City",
+            phone: "+251 713 269 849",
+            email: "mail@naifdigital.com",
+            image: "dire.jpg"
         },
-        {
-            city: "Dubai",
-            address: "Level 15, Burj Daman\nDubai International Financial Centre",
-            phone: "+971 4 567 8901",
-            email: "dubai@naifdigital.com",
-            coordinates: "25.2048° N, 55.2708° E",
-            image: "/offices/dubai.jpg"
-        }
     ];
 
     const contactFormFields = [
@@ -127,7 +113,7 @@ const ContactPage = () => {
                             Connections, <br />Local Expertise
                         </h1>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Wherever you are in the world, our engineering teams are ready to collaborate across time zones and languages.
+                            Wherever you are in the world, our engineering teams are ready to collaborate across time zones.
                         </p>
                     </div>
                 </div>
@@ -287,7 +273,7 @@ const ContactPage = () => {
                     <div className="lg:w-1/3">
                         <div className="sticky top-8">
                             <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                                Our <span className="text-[#00b3cc]">Global</span> Offices
+                                Our <span className="text-[#00b3cc]">Locations</span>
                             </h2>
 
                             <div className="space-y-8">
@@ -305,16 +291,6 @@ const ContactPage = () => {
                                             </div>
                                         </div>
                                         <div className="p-6">
-                                            <div className="flex items-start mb-4">
-                                                <svg className="h-5 w-5 text-[#00b3cc] mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                </svg>
-                                                <div>
-                                                    <p className="text-gray-700 whitespace-pre-line">{office.address}</p>
-                                                    <p className="text-gray-500 text-sm mt-1">{office.coordinates}</p>
-                                                </div>
-                                            </div>
                                             <div className="flex items-start mb-4">
                                                 <svg className="h-5 w-5 text-[#00b3cc] mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -349,7 +325,7 @@ const ContactPage = () => {
             </div>
 
             {/* CTA Section */}
-            <section className="bg-gradient-to-r from-[#00C4FF] to-[#00FFC4] py-16">
+            <section className="py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-6">
                         Need Immediate Assistance?
@@ -375,23 +351,6 @@ const ContactPage = () => {
             </section>
 
             {/* Interactive Map (Placeholder) */}
-            <div className="container mx-auto px-6 py-12">
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-                    <div className="p-6 border-b border-gray-200">
-                        <h3 className="text-xl font-bold text-gray-900">Global Presence Map</h3>
-                    </div>
-                    <div className="h-96 bg-gray-100 flex items-center justify-center relative">
-                        {/* This would be replaced with an actual interactive map component */}
-                        <div className="absolute inset-0 bg-[url('/world-map-dark.svg')] bg-contain bg-no-repeat bg-center opacity-10"></div>
-                        <div className="relative z-10 text-center">
-                            <div className="inline-flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-200">
-                                <div className="w-3 h-3 rounded-full bg-[#00C4FF] mr-3 animate-pulse"></div>
-                                <span className="font-medium text-gray-900">Interactive Map Coming Soon</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             {/* Animations */}
             <style jsx global>{`
