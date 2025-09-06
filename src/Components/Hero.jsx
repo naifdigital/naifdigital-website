@@ -149,21 +149,21 @@ const Hero = () => {
   const backgroundMedia = [
     {
       type: 'video',
-      src: 'unveiling naif digital intro.mp4',
+      src: 'https://ik.imagekit.io/cloudstorageimage/Public/public/unveiling%20naif%20digital%20intro.mp4?updatedAt=1757180078467',
       title: "Software Development",
       subtitle: "& Digital Growth Partner",
       description: "We build modern, scalable software for businesses ready to grow. From idea to launch, we bring full-stack solutions that deliver real results."
     },
     {
-      type: 'image',
-      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      type: 'video',
+      src: "https://ik.imagekit.io/cloudstorageimage/Public/public/k49yf6ar4gbmkcbusw7y.mp4?updatedAt=1757180158699",
       title: "Smart Systems",
       subtitle: "Built for Scale and Security",
       description: "We create reliable platforms and tools for growing teams. Every system is designed to be fast, secure, and ready for the future."
     },
     {
       type: 'video',
-      src: 'Neil Patel - NP Digital.mp4',
+      src: 'https://ik.imagekit.io/cloudstorageimage/Public/public/k49yf6ar4gbmkcbusw7y.mp4?updatedAt=1757180158699',
       title: "Performance Marketing",
       subtitle: "Growth That Converts",
       description: "We help brands grow with data-driven campaigns. Our approach focuses on real impact—more traffic, better leads, and lasting reach."
@@ -273,43 +273,19 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center min-h-screen">
         <div className="pt-24 pb-12 lg:pb-16 w-full lg:w-2/3">
           {/* Trust badge - centered */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex mb-8 md:mb-12"
-          >
-            <motion.div
-              className="relative group"
-            >
-              {/* Main badge */}
-              <div className="flex items-center bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFC4]/10 px-6 py-3 rounded-full backdrop-blur-xl border border-white/20">
-                {/* Animated verification icon */}
-                <svg
-                  className="w-5 h-5 mr-2 text-[#00FFC4] animate-pulse-slow"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-
-                {/* Text with gradient */}
-                <span className="text-sm md:text-base font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-[#00FFC4]">
-                  Trusted by Local and Global Businesses
-                </span>
-
-                {/* Floating particles */}
-              </div>
-
-              {/* Subtle glow effect on hover */}
-            </motion.div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-xl px-4 py-2">
+            <span className="inline-flex h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_20px_4px_rgba(34,211,238,0.6)]" />
+            <span className="text-sm tracking-wide text-white/80">
+              Trusted by leading startups & global brands
+            </span>
+          </div>
+        </motion.div>
 
 
           {/* Animated title - shifted left */}

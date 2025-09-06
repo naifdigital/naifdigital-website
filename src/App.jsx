@@ -43,9 +43,7 @@ function App() {
                 <Services />
                 <Approach />
                 <Academy />
-                {/* Testimonials will go here in the future */}
                 <ContactSection />
-                {/* <Leadership /> */}
               </>
             }
           />

@@ -48,15 +48,22 @@ const AboutPage = () => {
       role: "CEO, Founder & Software Engineer",
       expertise:
         "Expert in web Development, backend and frontend development, Adnan has a strong track record of designing scalable, secure, and maintainable systems from the ground up. His leadership and hands-on development experience span a range of industries, enabling him to deliver digital products.",
-      avatar: "developer.png",
+      avatar: "https://ik.imagekit.io/cloudstorageimage/Public/public/developer.png?updatedAt=1757180062374",
     },
     {
       name: "Abdulfetah Suudi Hasen",
-      role: "Manager & Full Stack Engineer",
+      role: "CTO, Manager & Full Stack Engineer",
       expertise:
         "Specialized in full stack development with a focus on crafting responsive web interfaces, robust backend solutions and cross-platform mobile app development. Abdulfetah brings extensive experience in managing software projects from concept to launch. and high-quality code.",
-      avatar: "suudi.webp",
+      avatar: "https://ik.imagekit.io/cloudstorageimage/Public/public/suudi.webp?updatedAt=1757180008588",
     },
+{
+  name: "Ibrahim Mohammed",
+  role: "Chief Financial Officer (CFO) & Team Leader",
+  expertise: "Expert in building and guiding high-performing teams, aligning people with organizational goals, and fostering collaboration across departments. Strong background in leadership development, strategic planning, and problem-solving. Known for mentoring emerging leaders, improving team efficiency through effective communication, and driving innovation in dynamic business environments.",
+  avatar: "",
+}
+
   ];
 
 
@@ -238,9 +245,9 @@ const AboutPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#001F3F] to-[#003366]">
+      <section className="py-20 bg-white text-black">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold  mb-6">
             We are Ready to Transform Your Digital Future?
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">

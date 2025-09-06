@@ -51,7 +51,7 @@ const Header = () => {
               <Link to="/" className="group">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                    <img src="naifdigital-logo-with-frame.png" alt="Naif Digital Logo" className="w-8 h-8 object-contain" />
+                    <img src="naifdigital-logo-without-frame.png" alt="Naif Digital Logo" className="w-16 h-16 object-contain" />
                   </div>
                   <span className="text-2xl font-bold bg-gradient-to-r from-[#001F3F] to-[#005587] bg-clip-text text-transparent">
                     Naif Digital

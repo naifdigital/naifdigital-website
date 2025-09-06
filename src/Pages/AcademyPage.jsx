@@ -47,7 +47,7 @@ const AcademyPage = () => {
             level: "Advanced",
             price: "1,500",
             schedule: "Cohort starts in 3 three months",
-            thumbnail: "fsd-course-banner.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example1",
             instructor: {
                 name: "Abdulfetah Suudi Hasen",
@@ -92,7 +92,7 @@ const AcademyPage = () => {
             level: "Leadership",
             price: "$5,499",
             schedule: "Quarterly cohorts",
-            thumbnail: "figma-course-banner.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example2",
             instructor: {
                 name: "James Wilson",
@@ -132,7 +132,7 @@ const AcademyPage = () => {
             level: "Advanced",
             price: "1,500",
             schedule: "Cohort starts in 3 three months",
-            thumbnail: "dsa-course-banner.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example1",
             instructor: {
                 name: "Abdulfetah Suudi Hasen",
@@ -177,7 +177,7 @@ const AcademyPage = () => {
             level: "Intermediate",
             price: "$4,299",
             schedule: "Bi-monthly cohorts",
-            thumbnail: "mobile-app-course-banner.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example-mobile",
             instructor: {
                 name: "Amina Yusuf",
@@ -217,7 +217,7 @@ const AcademyPage = () => {
             level: "Beginner to Intermediate",
             price: "$2,999",
             schedule: "Monthly cohorts",
-            thumbnail: "wordpress-seo-course-banner.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example-seo",
             instructor: {
                 name: "Daniel Kim",
@@ -257,7 +257,7 @@ const AcademyPage = () => {
             level: "Beginner",
             price: "$1,999",
             schedule: "Open enrollment",
-            thumbnail: "fundamentals-programming-course.jpg",
+            thumbnail: "https://ik.imagekit.io/cloudstorageimage/Public/public/fsd-course-banner.jpg?updatedAt=1757180028524",
             videoPreview: "https://youtube.com/embed/example-dsa",
             instructor: {
                 name: "Sara Teshome",

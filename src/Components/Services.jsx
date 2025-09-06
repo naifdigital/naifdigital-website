@@ -139,11 +139,11 @@ const Services = () => {
           <p className="text-center text-gray-500 text-sm mb-8">TRUSTED BY LOCAL AND REMOTE COMPANIES</p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 hover:opacity-100 transition-opacity">
             {[
-              'gena-logo.png',
-              'lds-logo.png',
-              'maamta-logo.png',
-              'vnp-logo.png',
-              'orostore-logo.png'
+              'https://ik.imagekit.io/cloudstorageimage/Public/public/gena-logo.png?updatedAt=1757180039714',
+              'https://ik.imagekit.io/cloudstorageimage/Public/public/gena-logo.png?updatedAt=1757180039714',
+              'https://ik.imagekit.io/cloudstorageimage/Public/public/gena-logo.png?updatedAt=1757180039714',
+              'https://ik.imagekit.io/cloudstorageimage/Public/public/gena-logo.png?updatedAt=1757180039714',
+              'https://ik.imagekit.io/cloudstorageimage/Public/public/gena-logo.png?updatedAt=1757180039714'
             ].map((logo, index) => (
               <img
                 key={index}

@@ -55,19 +55,19 @@ const ContactPage = () => {
             city: "Harar City",
             phone: "+251 938 810 259",
             email: "mail@naifdigital.com",
-            image: "harar.jpeg"
+            image: "https://ik.imagekit.io/cloudstorageimage/Public/public/harar.jpeg?updatedAt=1757180041403"
         },
         {
             city: "Adama City",
             phone: "+251 968 144 761",
             email: "mail@naifdigital.com",
-            image: "adama.jpg"
+            image: "https://ik.imagekit.io/cloudstorageimage/Public/public/adama.jpg?updatedAt=1757180032286"
         },
         {
             city: "Dire Dawa City",
             phone: "+251 713 269 849",
             email: "mail@naifdigital.com",
-            image: "dire.jpg"
+            image: "https://ik.imagekit.io/cloudstorageimage/Public/public/harar.jpeg?updatedAt=1757180041403"
         },
     ];
 

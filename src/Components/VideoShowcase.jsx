@@ -8,7 +8,7 @@ const VideoShowcase = () => {
     {
       title: "Global Digital Transformation",
       description: "See how we're reshaping enterprises across 35+ countries",
-      videoUrl: "Unveiling Mereb Technology PLC.mp4",
+      videoUrl: "https://ik.imagekit.io/cloudstorageimage/Public/public/Unveiling%20Mereb%20Technology%20PLC.mp4?updatedAt=1757180144252",
       stats: [
         { value: "200+", label: "Enterprises" },
         { value: "3.5x", label: "Average ROI" }
@@ -17,7 +17,7 @@ const VideoShowcase = () => {
     {
       title: "AI-Powered Solutions",
       description: "Discover our cutting-edge technology implementations",
-      videoUrl: "Neil Patel - NP Digital.mp4",
+      videoUrl: "https://ik.imagekit.io/cloudstorageimage/Public/public/Neil%20Patel%20-%20NP%20Digital.mp4?updatedAt=1757180054088",
       stats: [
         { value: "99.9%", label: "Uptime" },
         { value: "10M+", label: "Predictions" }
